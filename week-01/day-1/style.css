@@ -1,0 +1,64 @@
+body {
+    margin: 0px;
+    background-image: url(img/topography.png);
+}
+.nav-bar {
+    background-color:#333333;
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    display: inline;
+    width: 50%;
+    margin-right: 100px;
+}
+
+a {
+    color: #ff0099;
+    padding: 10px;
+    float: right;
+}
+
+.div-logo {
+    width: 50%;
+}
+
+.aperture-logo {
+    margin-left: 100px;
+    padding: 10px;
+}
+
+.main-part {
+    margin: 100px;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.line, .tech-wiki {
+    text-align: center;
+}
+
+p {
+    font-family: consolas, courier;
+    line-height: 20px;
+}
+
+.full-stack {
+    font-size: 25px;
+    color: #ff0099;
+} 
+
+.line {
+    font-size: 20px;
+}
+
+.last {
+    font-size: 12px;
+}
