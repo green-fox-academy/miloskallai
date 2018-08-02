@@ -286,7 +286,7 @@ for (let i: number = 0; i < 500; i++) {
     console.log(i);
    } 
 }
-*/
+
 let number: number = 15;
 
 // Create a program that
@@ -295,3 +295,16 @@ let number: number = 15;
 for(let i: number = 1; i < 11; i++) {
     console.log(number * i);
 }
+
+for(let i: number = 1; i < 101; i++) {
+    if (i % 3 === 0 && i % 5 === 0){
+        console.log("FizzBuzz");
+    } else if(i % 3 === 0) {
+        console.log('Fizz');
+    } else if (i % 5 === 0) {
+        console.log('Buzz');
+    } else {
+        console.log(i);
+    }
+}
+*/
