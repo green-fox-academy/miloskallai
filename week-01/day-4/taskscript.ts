@@ -313,6 +313,7 @@ for(let i: number = 1; i <= lineCount; i++){
     //console.log(asterisk);
     console.log(asterisk += '*');
 }
+
 // Write a program that draws a
 // pyramid like this:
 //
@@ -325,15 +326,79 @@ for(let i: number = 1; i <= lineCount; i++){
 
 let lineCount: number = 4;
 
-for (let i: number = 0; i <= lineCount; i++) {
-    let asterisk: string = '';
-    for(let j: number = 1; j <= lineCount - i; j++) {       
-         asterisk += ' ';
-    } 
-    for (let k: number = 1; k <= (2 * i + 1); k++) {
-            asterisk +='*';
+for (let i: number = 0; i < lineCount; i++) {
+    let pyramid: string = '';
+    for(let j: number = 0; j < lineCount - i; j++){
+        pyramid += " ";
+    } for( let k: number = 0; k < i + 1; k++){
+        if(k === 0) {
+            pyramid += '*';
+        } else {
+            pyramid += '**';
+        }
     }
-    console.log(asterisk);
+    console.log(pyramid);
 }
 */
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+// Write a program that draws a
+// diamond like this:
+//
+//    *
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+//
+// The diamond should have as many lines as lineCount is
+let lineCount: number = 7;
+let halfLineCount: number = Math.floor(lineCount / 2);
+
+for (let i: number = 0; i < halfLineCount; i++) {
+    let pyramid: string = '';
+    for(let j: number = 0; j < halfLineCount - i; j++){
+        pyramid += " ";
+    } for( let k: number = 0; k < i + 1; k++){
+        if(k === 0) {
+            pyramid += '*';
+        } else {
+            pyramid += '**';
+        }
+    }
+    console.log(pyramid);
+}
+
+for (let i: number = halfLineCount; i >= 0; i--) {
+    let pyramid: string = '';
+    for(let j: number = 0; j < halfLineCount - i; j++){
+        pyramid += " ";
+    } for( let k: number = 0; k < i + 1; k++){
+        if(k === 0) {
+            pyramid += '*';
+        } else {
+            pyramid += '**';
+        }
+    }
+    console.log(pyramid);
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+// Create a program that draws a chess table like this
+//
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
+// % % % %
+//  % % % %
 
