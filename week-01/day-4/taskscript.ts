@@ -3,7 +3,6 @@ console.log
 ('Hello World');
 console.log('Hello Milos');
 
-
 // Modify this program to console.log Humpty Dumpty riddle correctly
 console.log('Humpty Dumpty sat on a wall,');
 console.log('Humpty Dumpty had a great fall.');
@@ -307,4 +306,23 @@ for(let i: number = 1; i < 101; i++) {
         console.log(i);
     }
 }
+
+// Write a program that draws a triangle like this:
+//
+// *
+// **
+// ***
+// ****
+//
+// The triangle should have as many lines as lineCount is
+
+let lineCount: number = 4;
+let asterisk: string = '';
+
+for(let i: number = 1; i <= lineCount; i++){
+    //console.log(asterisk);
+    console.log(asterisk += '*');
+}
+
 */
+
