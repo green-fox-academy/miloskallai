@@ -12,12 +12,12 @@ body {
     display: inline;
     width: 50%;
     margin-right: 100px;
+    text-align: right;
 }
 
 a {
     color: #ff0099;
     padding: 10px;
-    float: right;
 }
 
 .div-logo {

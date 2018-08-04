@@ -339,10 +339,7 @@ for (let i: number = 0; i < lineCount; i++) {
     }
     console.log(pyramid);
 }
-*/
 
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
 // Write a program that draws a
 // diamond like this:
 //
@@ -386,11 +383,7 @@ for (let i: number = halfLineCount; i >= 0; i--) {
     console.log(pyramid);
 }
 
-
-
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-
+*/
 // Create a program that draws a chess table like this
 //
 // % % % %
@@ -401,4 +394,3 @@ for (let i: number = halfLineCount; i >= 0; i--) {
 //  % % % %
 // % % % %
 //  % % % %
-
