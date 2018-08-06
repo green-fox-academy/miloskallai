@@ -10,4 +10,4 @@ https://github.com/miloskallai/patchwork
 
 # Link to coffee syllabus
 
-(https://github.com/green-fox-academy/coffee-syllabus)
+https://github.com/green-fox-academy/coffee-syllabus
