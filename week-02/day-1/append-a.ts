@@ -6,9 +6,8 @@ export{}
 
 let typo: string = 'Chinchill';
 
-function appendAFunc (input: string) {
+function appendAFunc (input: string): string {
     return input + 'a';
 }
 
 console.log(appendAFunc(typo));
-
