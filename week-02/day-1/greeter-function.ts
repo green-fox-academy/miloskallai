@@ -8,12 +8,11 @@ export{}
 
 let name: string = 'Greenfox';
 
-function greet(nameInput?: string) { 
+function greet(nameInput?: string): void { 
     if(nameInput === undefined) {
         console.log('Greetings, dear User');
     } else {
         console.log('Greetings, dear ' + nameInput);
     }
-        
 }
 greet(name);
