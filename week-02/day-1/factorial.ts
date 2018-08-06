@@ -2,15 +2,12 @@
 //    that returns it's input's factorial
 export { };
 
-function factorio(inputNumber: number): number {
-    if (inputNumber === 0  || inputNumber === 1) 
-        return 1;
-        for(let i: number = inputNumber - 1; i >= 1; i--){ 
-           // console.log(i);
-        inputNumber = inputNumber * i;
-        }
-        return inputNumber;
+function factorio (num: number): number {
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
 }
 
-let result = factorio(4);
-console.log(result);
+console.log(factorio(4));
