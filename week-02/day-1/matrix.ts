@@ -18,4 +18,5 @@ twoDimensionaList.forEach(function(num){
     console.log(num);
 });
 
+
 console.log(twoDimensionaList[0][0]);
