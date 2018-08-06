@@ -7,7 +7,6 @@ for(let i: number = 1; i < inputNumber + 1; i++){
     let numTwo: number = 2;
     numTwo *= i;
     return numTwo; 
-
     }
 }
 
