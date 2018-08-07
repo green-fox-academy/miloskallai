@@ -27,7 +27,6 @@ function avarageCandies(object: object[]): any {
     let avarageBase: number = 0;
     for(let i: number = 0; i < object.length; i++) {
         let sum: number = object[i]['candies'];
-        //console.log(sum);
         avarageBase += sum;
     }
     return avarageBase / object.length;
