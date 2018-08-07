@@ -15,7 +15,7 @@ function matchMaking(arr1: string[], arr2: string[]): string[] {
         result.push(arr2[i]);
           
     }
-    
+
     return result; 
 }
 
