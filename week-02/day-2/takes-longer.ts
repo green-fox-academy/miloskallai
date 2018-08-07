@@ -3,10 +3,14 @@
 // Add "always takes longer than" to between the words "It" and "you"
 let quote: string = 'Hofstadter\'s Law: It you expect, even when you take into account Hofstadter\'s Law.'
 
-console.log(quote.indexOf('t'));
+let missingPart: string = 'always takes longer than';
 
-let firstPart: string = quote.slice(4, quote.length);
-console.log(firstPart);
-//let secondPart: string =
+let secondPart: string = quote.slice(21);
+console.log(secondPart);
+
+let fistPart: string = quote.slice(0, 21 - quote.length);
+console.log(fistPart);
+
+quote = fistPart + ' ' + missingPart + ' ' + secondPart;
 
 console.log(quote);
