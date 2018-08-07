@@ -11,12 +11,20 @@ const students: any[] = [
 
 // create a function that takes a list of students and logs: 
 // - how many candies are owned by students
+
+function addCandies(arr: string[]): number {
+    let allCandies: number = 0;
+    for(let i: number = 0; i < arr.length; i++) {
+        allCandies += arr[i]['candies'];
+    }
+    return allCandies;
+}
+
+console.log(addCandies(students));
+
 // create a function that takes a list of students and logs:
 // - Sum of the age of people who have lass than 5 candies
 
 
-let allCandies: number = 0;
-for(let i: number = 0; i < students.length; i++) {
-    allCandies += students[i].candies;
-}
-console.log(allCandies);
+
+
