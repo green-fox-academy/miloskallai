@@ -25,6 +25,14 @@ console.log(addCandies(students));
 // create a function that takes a list of students and logs:
 // - Sum of the age of people who have lass than 5 candies
 
+function sumOfTheAge(array: string[]): number {
+    let ages: number = 0;
+    for(let i: number = 0; i < students.length; i++) {
+        if(students[i]['candies'] < 5) {
+            ages += students[i]['age']  
+        }
+    }
+    return ages;    
+}
 
-
-
+console.log(sumOfTheAge(students));
