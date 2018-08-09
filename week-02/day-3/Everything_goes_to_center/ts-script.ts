@@ -9,10 +9,43 @@ const ctx = canvas.getContext('2d');
 // and draws a line from that point to the center of the canvas.
 // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-let centerX: number = canvas.width / 2;
-let centerY: number = canvas.height / 2;
+let canvasWidth: number = canvas.width;
+let canvasHeight: number = canvas.height;
 
-ctx.beginPath();
-ctx.moveTo(10,10);
-ctx.lineTo(centerX, centerY);
-ctx.stroke();
+let centerX: number = canvasWidth / 2;
+let centerY: number = canvasHeight / 2;
+
+function createLine(startingX: number, startingY: number){
+    ctx.beginPath();
+    ctx.moveTo(startingX,startingY);
+    ctx.lineTo(centerX, centerY);
+    ctx.stroke();
+}
+
+let fromTop: number = - 20;
+    for(let i: number = 0; i <= canvasWidth / 20; i++) {
+        console.log('canvas:' + canvasWidth);
+        fromTop += 20;
+        createLine(fromTop,0);
+    }
+    
+    let fromBottom: number = - 20;
+    for(let i: number = 0; i <= canvasWidth / 20; i++) {
+        fromBottom += 20;
+        console.log(fromBottom);
+        createLine(fromBottom, canvasHeight);
+    }
+    
+    let fromLeft: number = - 20;
+    for(let i: number = 0; i <= canvasHeight / 20; i++) {
+        console.log('canvas:' + canvasHeight);
+        fromLeft += 20;
+        createLine(0,fromLeft);
+    }
+    
+    let fromRight: number = - 20;
+    for(let i: number = 0; i <= canvasHeight / 20; i++) {
+        fromRight += 20;
+        console.log(fromRight);
+        createLine(canvasWidth, fromRight);
+    }

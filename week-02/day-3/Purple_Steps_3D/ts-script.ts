@@ -11,20 +11,21 @@ function drawPurpleSteps(){
    
     for(let i: number = 1; i <= 6; i++) {
         ctx.fillStyle = 'purple';
-        let doubledSize: number = i * 5 * 2;
+        let size: number = i * 5 * 2;
         let power = 5 * Math.pow(2, i);
         let fourthCase = (5 * Math.pow(2, i)) - 5 * 2;
         let fifthCase = (5 * Math.pow(2, i)) - 5 * 10;
         let sixthCase = (5 * Math.pow(2, i)) - 5 * 32;
-        console.log(fourthCase, fifthCase, sixthCase);
+    
+        console.log(size);
         if(i === 4) {
-          ctx.fillRect(fourthCase, fourthCase, doubledSize, doubledSize);
+          ctx.fillRect(fourthCase, fourthCase, size, size);
             } else if (i === 5) {
-            ctx.fillRect(fifthCase, fifthCase, doubledSize, doubledSize);
+            ctx.fillRect(fifthCase, fifthCase, size, size);
             } else if (i === 6) {
-                ctx.fillRect(sixthCase, sixthCase, doubledSize, doubledSize);
+                ctx.fillRect(sixthCase, sixthCase, size, size);
         } else {
-            ctx.fillRect(power, power, doubledSize, doubledSize);
+            ctx.fillRect(power, power, size, size);
         }
     }
 }
