@@ -13,19 +13,22 @@ const ctx = canvas.getContext('2d');
 
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-let starA: number = 5;
-
-
+let star: number = 5;
 
 function nightSky(numberOfStarts: number) {
     for(let i: number = 0; i < numberOfStarts; i++){
 
+        let randomGreyShades: number = Math.floor(Math.random() * 255);
+
+        let randomGrey: string = "rgb(" + randomGreyShades + ', ' + randomGreyShades + ', ' + randomGreyShades + ')';
+        console.log(randomGrey); 
+
         let randomX: number = Math.floor(Math.random() * canvas.width);
         let randomY: number = Math.floor(Math.random() * canvas.height);
 
-    ctx.fillStyle = "grey";
-    ctx.fillRect(randomX, randomY, starA, starA);
+    ctx.fillStyle = randomGrey;
+    ctx.fillRect(randomX, randomY, star, star);
     }
 }
 
-nightSky(40);
+nightSky(50);
