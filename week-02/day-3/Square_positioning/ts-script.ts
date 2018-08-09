@@ -7,12 +7,14 @@ const ctx = canvas.getContext('2d');
 
 function squareDrawing(x:number, y:number){
     ctx.fillRect(x, y, 50, 50);
-    for(let i: number = 3; i < 3; i++) {
-        
     }
+
+for (let i:number = 0; i < 3; i ++) {
+    let randomX: number = Math.floor(Math.random() * (canvas.width - 50));
+    let randomY = Math.floor(Math.random() * (canvas.height - 50));
+    squareDrawing(randomX, randomY);
 }
 
-squareDrawing(100, 100);
 
 // Create a square drawing function that takes 2 parameters:
 // The x and y coordinates of the square's top left corner
