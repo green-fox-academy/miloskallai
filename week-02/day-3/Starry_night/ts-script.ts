@@ -21,8 +21,7 @@ function nightSky(numberOfStarts: number) {
         let randomGreyShades: number = Math.floor(Math.random() * 255);
 
         let randomGrey: string = "rgb(" + randomGreyShades + ', ' + randomGreyShades + ', ' + randomGreyShades + ')';
-        console.log(randomGrey); 
-
+     
         let randomX: number = Math.floor(Math.random() * canvas.width);
         let randomY: number = Math.floor(Math.random() * canvas.height);
 
