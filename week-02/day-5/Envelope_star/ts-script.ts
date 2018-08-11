@@ -26,15 +26,13 @@ let stepsSecondQuarter: number = 0;
 for(let i: number = 0; i < canvasSize / 60; i++) {
     
     stepsSecondQuarter += 30;
-  
+    console.log(stepsSecondQuarter);
     ctx.strokeStyle = 'green';
     ctx.beginPath();
-    ctx.moveTo(canvasSize / 2, canvasSize / 2 - stepsSecondQuarter);
-    ctx.lineTo(canvasSize - stepsSecondQuarter , canvasSize / 2);
+    ctx.moveTo(canvasSize / 2 + stepsSecondQuarter, canvasSize / 2);
+    ctx.lineTo(canvasSize / 2, stepsSecondQuarter);
     ctx.stroke();
 }   
-
-
 
 let stepsFirstQuarter: number = 0;
 
