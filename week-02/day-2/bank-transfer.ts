@@ -12,22 +12,16 @@ const accounts: any[] = [
 
 function getNameAndBalance(accountNumber: number): any {
     let result: string[] = [];
-    if (accountNumber === 11234543) {
-        result.push(accounts[0]['clientName']);
-        result.push(accounts[0]['balance']);
-        return result;
-    } else if (accountNumber === 43546731) {
-        result.push(accounts[0]['clientName']);
-        result.push(accounts[0]['balance']);
-        return result;
-    } else if (accountNumber === 23456311) {
-        result.push(accounts[0]['clientName']);
-        result.push(accounts[0]['balance']);
-        return result;
+    for (let i: number = 0; i <= 3; i++) {
+        if (accountNumber === accounts[i]['accountNumber']){
+           return accounts[i]['clientName'] + ', ' + accounts[i]['balance'];
+        }
     }
 }
 
-console.log(getNameAndBalance(11234543));
+console.log(getNameAndBalance(43546731));
+
+/*
 
 function moneyTransfer(accounts: object, fromAccount: number, toAccount: number, cash: number): any {
     
@@ -59,6 +53,8 @@ function moneyTransfer(accounts: object, fromAccount: number, toAccount: number,
 }
 
 moneyTransfer(accounts, 1123223232324543, 43546731, 1);
+
+*/
 
 // Create function that transfers an amount of cash from one account to another
 // it should have four parameters:
