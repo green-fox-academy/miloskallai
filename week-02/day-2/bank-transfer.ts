@@ -9,7 +9,7 @@ const accounts: any[] = [
 // Create function that returns the name and balance of cash on an account in a list
 // getNameAndBalance(11234543);
 // should return: ['Igor', 203004099.2]
-/*
+
 function getNameAndBalance(accountNumber: number): any {
     let result: string[] = [];
     for (let i: number = 0; i <= 3; i++) {
@@ -20,7 +20,6 @@ function getNameAndBalance(accountNumber: number): any {
 }
 
 console.log(getNameAndBalance(43546731));
-*/
 
 // Create function that transfers an amount of cash from one account to another
 // it should have four parameters:
@@ -46,9 +45,6 @@ function moneyTransfer(accounts: object, fromAccount: number, toAccount: number,
     let updatedAccounts = accounts;
     let output;
     
-    if(fromAccount || toAccount !== 11234543 || 43546731 || 23456311){
-        console.log ('404 - account not found');
-       } else {
         for (let i: number = 0; i < 3; i++) {
        
             if (fromAccount === updatedAccounts[i]['accountNumber']){  
@@ -60,7 +56,6 @@ function moneyTransfer(accounts: object, fromAccount: number, toAccount: number,
             } 
          }
          console.log(output);
-       }
 }
 
 moneyTransfer(accounts, 11234543, 43546731, 10);
