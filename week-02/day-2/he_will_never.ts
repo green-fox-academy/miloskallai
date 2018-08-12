@@ -25,6 +25,8 @@ for (const key of Object.keys(hashmap)) {
   temp.push(hashmap[key])
 }
 
-out = temp.toString()
+out = temp.toString();
+out = out.replace(/, ,/g, ' ');
+out = out.replace(/ ,/g, ', ');
 
 console.log(out)
