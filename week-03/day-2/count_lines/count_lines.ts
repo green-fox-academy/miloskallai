@@ -8,11 +8,18 @@
 declare function require(path: string): any;
 const fs = require("fs");
 
-function countLines(filename: string): any {
-  let fileContent = fs.readFileSync(filename, "utf-8");
-
-  let toCountArry = fileContent.split("\n");
-  return toCountArry.length;
+function countLines(fileName: string): number {
+  try {
+    if (fs.existsSync(fileName)) {
+      let fileContent = fs.readFileSync(fileName, "utf-8");
+      let toCountArry = fileContent.split("\n");
+      return toCountArry.length;
+    } else {
+      throw new Error("0");
+    }
+  } catch (e) {
+    return parseInt(e.message);
+  }
 }
 
 console.log(countLines("test-file.txt"));
