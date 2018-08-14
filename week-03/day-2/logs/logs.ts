@@ -38,8 +38,11 @@ function uniqueIPAdresses(file) {
     }
   }
 
+  let uniqueIPs = IPadresses.filter(function(item, index) {
+    return IPadresses.indexOf(item) >= index;
+  });
 
-  console.log(IPadresses);
+  return uniqueIPs;
 }
 
-uniqueIPAdresses(fileContent);
+console.log(uniqueIPAdresses(fileContent));
