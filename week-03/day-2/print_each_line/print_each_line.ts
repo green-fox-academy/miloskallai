@@ -16,7 +16,7 @@ function readFile(fileName: string): string {
       throw new Error("Unable to read file: " + fileName);
     }
   } catch (e) {
-    console.log(e.message);
+    return e.message;
   }
 }
 
