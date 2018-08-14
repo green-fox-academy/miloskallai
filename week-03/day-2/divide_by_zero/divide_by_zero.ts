@@ -13,7 +13,7 @@ function divideTen(num: number): number {
       return 10 / num;
     }
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
   }
 }
 
