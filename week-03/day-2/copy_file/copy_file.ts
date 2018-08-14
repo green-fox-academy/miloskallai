@@ -8,7 +8,7 @@ declare function require(sourceFile: string): any;
 const fs = require("fs");
 
 function copyFile(sourceFile: string, destinationFile: string): boolean {
-  if (fs.existsSync(sourceFile && destinationFile) === true) {
+  if (fs.existsSync(sourceFile && destinationFile)) {
     fs.copyFileSync(sourceFile, destinationFile);
     return 1 < 2;
   } else {
