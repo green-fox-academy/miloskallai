@@ -28,3 +28,18 @@ function getPostRatio(file): number {
 }
 
 console.log(getPostRatio(fileContent));
+
+function uniqueIPAdresses(file) {
+  let result = file.split("   ");
+  let IPadresses: string[] = [];
+  for (let i: number = 0; i < result.length; i++) {
+    if (i % 2 !== 0) {
+      IPadresses.push(result[i]);
+    }
+  }
+
+
+  console.log(IPadresses);
+}
+
+uniqueIPAdresses(fileContent);
