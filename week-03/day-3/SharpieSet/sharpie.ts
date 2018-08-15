@@ -10,8 +10,8 @@ class Sharpie {
   width: string;
   inkAmount: number;
 
-  use() {
-    this.inkAmount -= 1;
+  use(usedInk: number) {
+    this.inkAmount -= usedInk;
   }
 
   constructor(color: string, width: string) {
@@ -22,5 +22,6 @@ class Sharpie {
 }
 
 let redSharpie = new Sharpie("red", "thin");
-redSharpie.use();
-console.log(redSharpie);
+redSharpie.use(90);
+
+export{Sharpie}
