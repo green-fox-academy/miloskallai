@@ -15,17 +15,15 @@ function print(dominoes: Domino[]) {
   let dominoesArray: any[] = [];
   dominoes.forEach(function(value) {
     console.log(value);
-    dominoesArray.push(value.values);
   });
 
-  console.log(dominoesArray);
+  let dominoesResoult: any[] = [];
+  dominoesResoult.push(dominoes[0]);
 
-  let dominoesResoult: number[][] = [];
-
-  for (let i: number = 0; i < dominoesArray.length; i++) {
-    for (let j: number = 0; j < dominoesArray.length; j++) {
-      if (dominoesArray[i][1] === dominoesArray[j][0]) {
-        dominoesResoult.push(dominoesArray[i], dominoesArray[j]);
+  for (let i: number = 0; i < dominoes.length - 1; i++) {
+    for (let j: number = 0; j < dominoes.length; j++) {
+      if (dominoesResoult[i].values[1] === dominoes[j].values[0]) {
+        dominoesResoult.push(dominoes[j]);
       }
     }
   }
