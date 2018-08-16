@@ -18,14 +18,22 @@ class SharpieSet {
   countUsable(sharpieList) {
     let usableSharpies: any[] = [];
     sharpieList.forEach(function(element) {
-      if (element.inkAmount <= 0) {
+      if (element.inkAmount > 0) {
         usableSharpies.push(element);
       }
     });
-    console.log(usableSharpies);
+    return usableSharpies.length;
   }
 
-  removeTrash() {}
+  removeTrash(sharpieList) {
+    let usableSharpies: any[] = [];
+    sharpieList.forEach(function(element) {
+      if (element.inkAmount > 0) {
+        usableSharpies.push(element);
+      }
+    });
+    return usableSharpies;
+  }
 
   constructor(colorfulSharpie: any[]) {
     this.sharpieList = colorfulSharpie;
@@ -34,4 +42,6 @@ class SharpieSet {
 
 let sharpieCollection = new SharpieSet(toSharpieCollection);
 
-console.log(sharpieCollection.countUsable(sharpieCollection.sharpieList));
+console.log(sharpieCollection.removeTrash(toSharpieCollection));
+
+console.log(sharpieCollection.countUsable(toSharpieCollection));
