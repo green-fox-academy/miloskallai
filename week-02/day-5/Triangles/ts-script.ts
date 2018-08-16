@@ -27,16 +27,16 @@ ctx.stroke();
 
 
 let xGrowing = 0;
-let yDescending = canvasHeight - unit;
+let yGrowing = unit;
 
 for (let i: number = 0; i <= canvasWidth; i++){
     
     xGrowing += 25;
-    yDescending -= 20;
+    yGrowing += 20;
     
     ctx.beginPath();
     ctx.moveTo(xGrowing, canvasHeight - unit);
-    ctx.lineTo(canvasWidth / 2, unit);
+    ctx.lineTo(canvasWidth / 2 + xGrowing, yGrowing);
     ctx.stroke();
 }
 
