@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 const accounts: any[] = [
-  { clientName: 'Igor', accountNumber: 11234543, balance: 203004099.2 },
-  { clientName: 'Vladimir', accountNumber: 43546731, balance: 5204100071.23 },
-  { clientName: 'Sergei', accountNumber: 23456311, balance: 1353600.0 }
+  { clientName: "Igor", accountNumber: 11234543, balance: 203004099.2 },
+  { clientName: "Vladimir", accountNumber: 43546731, balance: 5204100071.23 },
+  { clientName: "Sergei", accountNumber: 23456311, balance: 1353600.0 }
 ];
 
 // Create function that returns the name and balance of cash on an account in a list
@@ -11,12 +11,12 @@ const accounts: any[] = [
 // should return: ['Igor', 203004099.2]
 
 function getNameAndBalance(accountNumber: number): any {
-    let result: string[] = [];
-    for (let i: number = 0; i <= 3; i++) {
-        if (accountNumber === accounts[i]['accountNumber']){
-           return accounts[i]['clientName'] + ', ' + accounts[i]['balance'];
-        }
+  let result: string[] = [];
+  for (let i: number = 0; i <= 3; i++) {
+    if (accountNumber === accounts[i]["accountNumber"]) {
+      return accounts[i]["clientName"] + ", " + accounts[i]["balance"];
     }
+  }
 }
 
 console.log(getNameAndBalance(43546731));
@@ -38,24 +38,33 @@ console.log(getNameAndBalance(43546731));
 //	{ clientName: 'Sergei', accountNumber: 23456311, balance: 1354100.0 }
 //]
 
-function moneyTransfer(accounts: object, fromAccount: number, toAccount: number, cash: number) {
+function moneyTransfer(
+  accounts: object,
+  fromAccount: number,
+  toAccount: number,
+  cash: number
+) {
+  let fromCash;
+  let toCash;
+  let updatedAccounts = accounts;
+  let output;
 
-    let fromCash;
-    let toCash;
-    let updatedAccounts = accounts;
-    let output;
-    
-        for (let i: number = 0; i < 3; i++) {
-       
-            if (fromAccount === updatedAccounts[i]['accountNumber']){  
-                fromCash = fromAccount = updatedAccounts[i]['balance'] = updatedAccounts[i]['balance'] - cash;
-                output = updatedAccounts;
-            } else if (toAccount === updatedAccounts[i]['accountNumber']) {
-                toCash = toAccount = updatedAccounts[i]['balance'] = updatedAccounts[i]['balance'] + cash;
-                output = updatedAccounts;
-            } 
-         }
-         console.log(output);
+  if (fromAccount || toAccount !== 11234543 || 43546731 || 23456311) {
+    console.log("404 - account not found");
+  } else {
+    for (let i: number = 0; i < 3; i++) {
+      if (fromAccount === updatedAccounts[i]["accountNumber"]) {
+        fromCash = fromAccount = updatedAccounts[i]["balance"] =
+          updatedAccounts[i]["balance"] - cash;
+        output = updatedAccounts;
+      } else if (toAccount === updatedAccounts[i]["accountNumber"]) {
+        toCash = toAccount = updatedAccounts[i]["balance"] =
+          updatedAccounts[i]["balance"] + cash;
+        output = updatedAccounts;
+      }
+    }
+    console.log(output);
+  }
 }
 
 moneyTransfer(accounts, 11234543, 43546731, 10);
