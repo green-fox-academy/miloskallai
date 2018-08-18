@@ -19,7 +19,7 @@ function getNameAndBalance(accountNumber: number): any {
   }
 }
 
-console.log(getNameAndBalance(43546731));
+//console.log(getNameAndBalance(43546731));
 
 // Create function that transfers an amount of cash from one account to another
 // it should have four parameters:
