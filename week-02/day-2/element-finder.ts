@@ -19,14 +19,14 @@ function containsSeven(numbers: number[]): string {
   return result;
 }
 
-const animals: string[] = ["lion", "goat", "dog", "bird"];
+let animals: string[] = ["lion", "goat", "dog", "bird"];
 
 console.log(isGoat(animals));
 
 function isGoat(animals: string[]): string {
   let result: string;
-
-  for (let i = 0; i < animals.length; i++) {
+  
+  for (let i = 0; i <= animals.length; i++) {
     if (animals[i] === "goat") {
       result = "Hooray";
     } else {

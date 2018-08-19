@@ -18,6 +18,5 @@ function sweets(items: any[]): any[] {
       items[i] = "Ice Cream";
     }
   }
-
   return items;
 }
