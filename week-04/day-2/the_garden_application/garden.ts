@@ -26,6 +26,16 @@ export class Garden {
 
   }
 
+  gardenState(){
+    this.trees.forEach(function(element){
+      element.isItNeedsWater();
+    });
+
+    this.flowers.forEach(function(element){
+      element.isItNeedsWater();
+    });
+  }
+
   watering(){
 
     wateringWithForty(this.needsToBeWatered);
@@ -42,9 +52,9 @@ export class Garden {
         }
           if(element.currentWaterAmount >= 5){
           let index = needsToBeWatered.indexOf(element);
-          console.log(index);
           needsToBeWatered.splice(index, 1);
         }
+        element.isItNeedsWater();
       }); 
     }
 
@@ -62,6 +72,7 @@ export class Garden {
           console.log(index);
           needsToBeWatered.splice(index, 1);
         }
+        element.isItNeedsWater();
       }); 
     }
 
