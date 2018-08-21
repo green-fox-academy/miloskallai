@@ -4,8 +4,8 @@ import {Person} from './person'
 
 export class Cohort extends Person {
   
-  protected students: string[];
-  protected mentors: string[];
+  protected students: any[];
+  protected mentors: any[];
 
 constructor(name: string){
   super(name);
