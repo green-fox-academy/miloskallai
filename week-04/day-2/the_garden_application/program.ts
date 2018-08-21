@@ -9,8 +9,7 @@ let orangeTree = new Tree(2,'orange');
 let purpleTree = new Tree(4,'purple');
 
 let yellowFlower = new Flower(5,'yellow');
-let blueFlowe = new Flower(3, 'blue');
-
+let blueFlower = new Flower(3, 'blue');
 
 let testGarden = new Garden(purpleTree, yellowFlower);
 

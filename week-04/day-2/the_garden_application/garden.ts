@@ -50,7 +50,10 @@ export class Garden {
         } else if(element.plantType === 'flower'){
           element.currentWaterAmount += waterPerPlant * 0.75;
         }
-          if(element.currentWaterAmount >= 5){
+          if(element.currentWaterAmount >= 5 && element.plantType === 'flower'){
+          let index = needsToBeWatered.indexOf(element);
+          needsToBeWatered.splice(index, 1);
+        } else if (element.currentWaterAmount >= 10 && element.plantType === 'tree'){
           let index = needsToBeWatered.indexOf(element);
           needsToBeWatered.splice(index, 1);
         }
@@ -67,9 +70,11 @@ export class Garden {
         } else if(element.plantType === 'flower'){
           element.currentWaterAmount += waterPerPlant * 0.75;
         }
-          if(element.currentWaterAmount >= 5){
+        if(element.currentWaterAmount >= 5 && element.plantType === 'flower'){
           let index = needsToBeWatered.indexOf(element);
-          console.log(index);
+          needsToBeWatered.splice(index, 1);
+        } else if (element.currentWaterAmount >= 10 && element.plantType === 'tree'){
+          let index = needsToBeWatered.indexOf(element);
           needsToBeWatered.splice(index, 1);
         }
         element.isItNeedsWater();
