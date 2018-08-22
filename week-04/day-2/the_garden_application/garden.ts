@@ -50,6 +50,7 @@ export class Garden {
         } else if(element.plantType === 'flower'){
           element.currentWaterAmount += waterPerPlant * 0.75;
         }
+        
           if(element.currentWaterAmount >= 5 && element.plantType === 'flower'){
           let index = needsToBeWatered.indexOf(element);
           needsToBeWatered.splice(index, 1);
