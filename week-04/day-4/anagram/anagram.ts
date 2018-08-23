@@ -1,6 +1,6 @@
 "use strict";
 
-function isAnagram(firstWord: string, secondWord: string) {
+export function isAnagram(firstWord: string, secondWord: string) {
   firstWord = firstWord.toLowerCase();
   secondWord = secondWord.toLowerCase();
 
