@@ -6,8 +6,8 @@ class DoThingsWithNumbers {
   
   
 
-  sum(list: number[]) {
-    let result: number = 0;
+  sum(list: any[]) {
+    let result: any = 0;
     list.forEach(function(element) {
       result += element;
     });
