@@ -2,11 +2,10 @@
 
 export class Plant {
   currentWaterAmount: number;
-  //waterAbsorb: number;
   color: string;
 
-constructor(currentWaterAmount: number, color:string){
-  this.currentWaterAmount = currentWaterAmount;
+constructor(color:string){
+  this.currentWaterAmount = 0;
   this.color = color;
 }
 

@@ -6,11 +6,12 @@ export class Tree extends Plant  {
 plantType: string;
 needsWater: boolean;
 
-  constructor(currentWaterAmount: number, color: string){
-    super(currentWaterAmount, color);
-
+  constructor(color: string){
+    super(color)
+    this.needsWater = true;
     this.plantType = 'tree';
-    if(currentWaterAmount >= 5){
+
+    if(this.currentWaterAmount >= 5){
       this.needsWater = false;
     } else {
       this.needsWater = true;

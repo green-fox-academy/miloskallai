@@ -5,18 +5,17 @@ import {Plant} from './plant'
 import {Flower} from './flower'
 import {Tree} from './tree'
 
-let orangeTree = new Tree(0,'orange');
-let purpleTree = new Tree(0,'purple');
+let testGarden = new Garden();
 
-let yellowFlower = new Flower(0,'yellow');
-let blueFlower = new Flower(0, 'blue');
+let orangeTree = new Tree('orange');
+let purpleTree = new Tree('purple');
+let yellowFlower = new Flower('yellow');
+let blueFlower = new Flower('blue');
 
-let testGarden = new Garden(purpleTree, yellowFlower);
+testGarden.getPlant(orangeTree);
+testGarden.getPlant(purpleTree);
+testGarden.getPlant(yellowFlower);
+testGarden.getPlant(blueFlower);
 
-console.log(testGarden.gardenState())
-
-/*
-console.log(purpleTree.currentWaterAmount);
+console.log(testGarden.gardenState());
 console.log(testGarden.watering());
-console.log(purpleTree.currentWaterAmount);
-*/

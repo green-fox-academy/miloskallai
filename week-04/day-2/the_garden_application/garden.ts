@@ -9,21 +9,21 @@ export class Garden {
   flowers: any[];
   needsToBeWatered: any[];
 
-    constructor(tree: any, flower: any){
-      this.trees = [];
-      this.flowers = [];
-  
-      this.trees.push(tree);
-      this.flowers.push(flower);
 
-      this.needsToBeWatered = [];
+  constructor(){
+    this.trees = [];
+    this.flowers = [];
+    this.needsToBeWatered = [];
+  }
 
-      if(tree.needsWater === true){
-        this.needsToBeWatered.push(tree)
-      } else if(flower.needsToBeWatered === true){
-        this.needsToBeWatered.push(flower);
-      }
-
+  getPlant(plantName: any){ 
+    if(plantName.plantType === 'tree'){
+      this.trees.push(plantName);
+      this.needsToBeWatered.push(plantName);
+    } else if(plantName.plantType = 'flower') {
+      this.flowers.push(plantName);
+      this.needsToBeWatered.push(plantName);
+    }
   }
 
   gardenState(){
@@ -53,11 +53,14 @@ export class Garden {
         
           if(element.currentWaterAmount >= 5 && element.plantType === 'flower'){
           let index = needsToBeWatered.indexOf(element);
+          element.needsWater = false;
           needsToBeWatered.splice(index, 1);
         } else if (element.currentWaterAmount >= 10 && element.plantType === 'tree'){
           let index = needsToBeWatered.indexOf(element);
+          element.needsWater = false;
           needsToBeWatered.splice(index, 1);
-        }
+        } 
+       
         element.isItNeedsWater();
       }); 
     }
