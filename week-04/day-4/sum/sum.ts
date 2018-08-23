@@ -3,11 +3,12 @@
 //let numbers: number[] = [1, 2, 3, 4, 5]; //15
 
 class DoThingsWithNumbers {
-  numbers: number[] = [1, 2, 3, 4, 5];
+  
+  
 
-  sum() {
+  sum(list: number[]) {
     let result: number = 0;
-    this.numbers.forEach(function(element) {
+    list.forEach(function(element) {
       result += element;
     });
     return result;
