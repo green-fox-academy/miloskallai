@@ -18,4 +18,9 @@ testGarden.getPlant(yellowFlower);
 testGarden.getPlant(blueFlower);
 
 console.log(testGarden.gardenState());
-console.log(testGarden.watering());
+
+console.log(testGarden.watering(40));
+console.log(testGarden.gardenState());
+
+console.log(testGarden.watering(70));
+console.log(testGarden.gardenState());

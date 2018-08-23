@@ -10,13 +10,6 @@ needsWater: boolean;
     super(color);
     this.needsWater = true;
     this.plantType = 'flower';
-
-    if(this.currentWaterAmount >= 5){
-      this.needsWater = false;
-    } else {
-      this.needsWater = true;
-    }
-
   }
 
   isItNeedsWater(){
