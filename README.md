@@ -12,6 +12,6 @@ https://github.com/miloskallai/patchwork
 
 https://github.com/green-fox-academy/coffee-syllabus
 
-# Link to todo app project
+[my totodo app](https://github.com/miloskallai/todo-app)
 
-https://github.com/miloskallai/todo-app
+
