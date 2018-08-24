@@ -11,3 +11,7 @@ https://github.com/miloskallai/patchwork
 # Link to coffee syllabus
 
 https://github.com/green-fox-academy/coffee-syllabus
+
+# Link to todo app project
+
+https://github.com/miloskallai/todo-app
