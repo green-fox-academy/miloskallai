@@ -10,7 +10,9 @@ export class Carrier {
     this.healthPoints = healthPoints;
   }
 
-  add() {}
+  add(aircraftName: any) {
+    this.allAircrafts.push(aircraftName);
+  }
 
   fill() {}
 
