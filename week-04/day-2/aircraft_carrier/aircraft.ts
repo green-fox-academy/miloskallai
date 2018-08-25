@@ -8,30 +8,31 @@ export class Aircraft {
   protected allDamage: number;
   protected priority: boolean;
 
-  fight() {
-      return this.ammo * this.baseDamage;;
-      this.ammo = 0;
-  }    
-
-  refill(ammoToRefill: number) {
-        if(ammoToRefill <= this.maxAmmo) {
-            this.ammo + ammoToRefill - this.ammo;
-        } else {
-            this.ammo + this.maxAmmo;
-        }  
+  fight(): number {
+    return this.ammo * this.baseDamage;
+    this.ammo = 0;
   }
 
-  getType() {
+  refill(ammoToRefill: number): number {
+    if (ammoToRefill <= this.maxAmmo) {
+      this.ammo + ammoToRefill - this.ammo;
+    } else {
+      this.ammo + this.maxAmmo;
+    }
+    return ammoToRefill - this.ammo;
+  }
+
+  getType(): string {
     return this.type;
   }
 
-  getStatus() {
+  getStatus(): string {
     return `Type ${this.type}, Ammo: ${this.ammo}, Base Damage: ${
       this.baseDamage
     }, All Damage: ${this.allDamage}`;
   }
 
-  isPriority() {
+  isPriority(): boolean {
     return this.priority;
   }
 }
