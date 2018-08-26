@@ -17,4 +17,6 @@ fistCarrier.fill();
 
 let opponentCarrier = new Carrier(50, 15);
 
+console.log(fistCarrier.getStatus());
 console.log(fistCarrier.fight(opponentCarrier));
+console.log(opponentCarrier.getStatus()); 
