@@ -2,11 +2,11 @@
 
 export class Aircraft {
   protected type: string;
-    ammo: number;
+  protected ammo: number;
   protected maxAmmo: number;
   protected baseDamage: number;
-  protected allDamage: number;
   protected priority: boolean;
+  protected allDamage: number;
 
   fight(): number {
     return this.ammo * this.baseDamage;

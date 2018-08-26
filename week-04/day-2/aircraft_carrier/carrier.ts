@@ -25,27 +25,32 @@ export class Carrier {
         aircraftsMaxAmmo += element.maxAmmo;
       });
 
-      if (this.ammo <= aircraftsMaxAmmo) {
         for (let i: number = 0; i < this.allAircrafts.length; i++) {
           if (this.allAircrafts[i].priority) {
             this.allAircrafts[i].refill(this.ammo);
             this.ammo -= this.allAircrafts[i].ammo;
           }
         }
-      }
 
-      if (this.ammo <= aircraftsMaxAmmo) {
         for (let i: number = 0; i < this.allAircrafts.length; i++) {
           if (!this.allAircrafts[i].priority) {
             this.allAircrafts[i].refill(this.ammo);
             this.ammo -= this.allAircrafts[i].ammo;
           }
         }
-      }
     }
   }
 
-  fight() {}
+  fight(opponentCarrier: any) {
+    let totalDamage = 0;
+    this.allAircrafts.forEach(function(element){
+      totalDamage += element.fight();
+    })
 
-  getStatus() {}
+    return opponentCarrier.healthPoints - totalDamage;
+  }
+
+  getStatus() {
+    return `HP: ${this.healthPoints}, Aircraft count: ${this.allAircrafts.length}, Ammo storage: ${this.ammo}, Total damage: `;
+  }
 }
