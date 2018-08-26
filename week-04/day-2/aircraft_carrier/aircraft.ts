@@ -2,7 +2,7 @@
 
 export class Aircraft {
   protected type: string;
-  protected ammo: number;
+    ammo: number;
   protected maxAmmo: number;
   protected baseDamage: number;
   protected allDamage: number;
@@ -14,10 +14,11 @@ export class Aircraft {
   }
 
   refill(ammoToRefill: number): number {
+
     if (ammoToRefill <= this.maxAmmo) {
-      this.ammo + ammoToRefill - this.ammo;
+      this.ammo += ammoToRefill;
     } else {
-      this.ammo + this.maxAmmo;
+      this.ammo += this.maxAmmo;
     }
     return ammoToRefill - this.ammo;
   }
