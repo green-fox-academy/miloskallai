@@ -1,0 +1,49 @@
+body{
+  margin: 0;
+}
+header{
+  width: 100vw;
+  height: 15vh;
+  background-color: aqua;
+}
+
+main{
+  display: flex;
+  width: 100vw;
+  height: 70vh;
+}
+
+.left-sidebar{
+  background-color: orange;
+  min-width: 15%;
+  flex-grow: 1;
+}
+
+.main-content{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: red;
+  min-width: 15%;
+  margin: 0 1% 0 1%;
+  flex-grow: 3;
+}
+
+.box{
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  margin: 3%;
+}
+
+.right-sidebar{
+  background-color: purple;
+  min-width: 15%;
+  flex-grow: 1;
+}
+
+footer{
+  width: 100vw;
+  height: 15vh;
+  background-color: blue
+}
