@@ -1,0 +1,19 @@
+body{
+  margin: 0px;
+}
+.container{
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD62A;
+  width: 415px;
+  height: 200px;
+}
+
+.item{
+  list-style: none;
+  background-color: #B02AFF;
+  width: 75px;
+  height: 75px;
+}
