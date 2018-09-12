@@ -8,3 +8,4 @@ imgURL.setAttribute('src', 'https://i.imgflip.com/issmr.jpg');
 linkToGF.setAttribute('href', 'https://www.greenfoxacademy.com/');
 
 buttonToDisable.disabled = true;
+buttonToDisable.textContent = `Don't click me`;
