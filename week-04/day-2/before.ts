@@ -1,7 +1,9 @@
+'use strict'
+
 class Person {
-  name: string;
-  age: number;
-  gender: string;
+  private name: string;
+  private age: number;
+  private gender: string;
 
   introduce(){
     console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ', ' + 'year old ' + this.gender + '.');
@@ -11,7 +13,7 @@ class Person {
     console.log('My goal is: Life for the moment!');
   }
 
-  constructor(name: string, age: number, gender: string){
+  constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female'){
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -21,11 +23,11 @@ class Person {
 
 class Student {
 
-  name: string;
-  age: number;
-  gender: string;
-  previousOrganization: string;
-  skippedDays: number
+  private name: string;
+  private age: number;
+  private gender: string;
+  private previousOrganization: string;
+  private skippedDays: number
 
   introduce(){
     console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ', ' + 'year old ' + this.gender + ' from ' + this.previousOrganization + ' who skipped ' + this.skippedDays + ' days from the course already.');
@@ -50,10 +52,10 @@ class Student {
 }
 
 class Mentor {
-  name: string;
-  age: number;
-  gender: string;
-  level: string;
+  private name: string;
+  private age: number;
+  private gender: string;
+  private level: string;
 
   introduce(){
     console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ', ' + 'year old ' + this.gender + ', ' + this.level + ' mentor.');
@@ -73,11 +75,11 @@ class Mentor {
 }
 
 class Sponsor {
-  name: string;
-  age: number;
-  gender: string;
-  company: string;
-  hiredStudents: number;
+  private name: string;
+  private age: number;
+  private gender: string;
+  private company: string;
+  private hiredStudents: number;
 
   introduce(){
     console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ', ' + 'year old ' + this.gender + ', who represents ' + this.company + ' and hired ' + this.hiredStudents + ' so far.');
@@ -87,7 +89,7 @@ class Sponsor {
     console.log('Hire brilliant junior software developers.');
   }
 
-  hire(studentsToHire: number){
+  hire(){
     this.hiredStudents += 1;
   }
 

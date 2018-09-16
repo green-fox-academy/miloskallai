@@ -14,3 +14,4 @@ list.appendChild(greenFox);
 list.appendChild(lampLighter);
 container.appendChild(header);
 container.appendChild(image);
+g

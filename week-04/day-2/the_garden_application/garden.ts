@@ -42,9 +42,7 @@ export class Garden {
       if (element.currentWaterAmount < 10 && element.plantType === "tree") {
         element.currentWaterAmount += waterPerPlant * 0.4;
       } else if (
-        element.currentWaterAmount < 5 &&
-        element.plantType === "flower"
-      ) {
+        element.currentWaterAmount < 5 && element.plantType === "flower") {
         element.currentWaterAmount += waterPerPlant * 0.75;
       }
     });

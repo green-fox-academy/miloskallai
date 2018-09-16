@@ -11,7 +11,7 @@ test('object returns apple', function(test){
   let expectedString = 'apple';
   let actualString = apple.getApple();
 
-  test.equal(expectedString, actualString);
+  test.equal(actualString, expectedString);
 
   test.end();
-})
+});

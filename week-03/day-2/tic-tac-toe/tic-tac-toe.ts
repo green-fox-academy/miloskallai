@@ -1,20 +1,32 @@
-'use strict'
+"use strict";
 declare function require(path: string): any;
-const fs = require('fs');
+const fs = require("fs");
 // Write a function that takes a filename as string,
-// open and read it. 
+// open and read it.
 //The file data represents a tic-tac-toe
-// game result. 
+// game result.
 //Return 'X'/'O'/'draw' based on which player has winning situation.
 // Make sure you have the 3 source files given to you on your computer
-console.log(ticTacResult('win-o.txt'));
+console.log(ticTacResult("win-o.txt"));
 // should print O
-console.log(ticTacResult('win-x.txt'));
+//console.log(ticTacResult('win-x.txt'));
 // should print X
-console.log(ticTacResult('draw.txt'));
-// should print draw 
+//console.log(ticTacResult('draw.txt'));
+// should print draw
 
-function ticTacResult(fileName: string){
-let fileContent = fs.readFileSync(fileName, 'utf-8');
-return fileContent;
+function ticTacResult(fileName: string) {
+
+  let fileContent = fs.readFileSync(fileName, "utf-8");
+  let ticTacToeTempArray: string[] = fileContent.split("\n");
+  let ticTacToeArray: string[][] = [];
+
+  ticTacToeTempArray.forEach(function(element) {
+    ticTacToeArray.push(element.split(""));
+  });
+
+  for (let i: number = 0; i < ticTacToeArray.length; i++) {
+ 
+    
+  }
+
 }

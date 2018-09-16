@@ -2,7 +2,6 @@
 
 import {Reservationy} from './reservationy'
 
-
 export class Reservation implements Reservationy {
   getDownBooking(){
     let daysOfTheWeek: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRY', 'SAT', 'SUN'];
