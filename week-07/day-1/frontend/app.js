@@ -28,13 +28,17 @@ app.get('/greeter', (req, res) => {
   let title = req.query.title;
   if (name && title) {
     res.json({
-      'welcome message': `Oh, hi there ${name}, my dear ${title}`
+      'welcome_message': `Oh, hi there ${name}, my dear ${title}!`
     });
-  } else{
+  } else if (!name){
     res.json({
       error: 'Please provide a name!'
     });
-  } 
+  } else if(!title){
+    res.json({
+      error: 'Please provide a title!'
+    });
+  }
 });
 
 app.listen(PORT, () => {
