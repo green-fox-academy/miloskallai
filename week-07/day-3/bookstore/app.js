@@ -2,6 +2,9 @@ const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const PORT = 8080;
+const cors = require('cors');
+
+app.use(cors());
 
 let query = 'SELECT book_name FROM book_mast';
 
