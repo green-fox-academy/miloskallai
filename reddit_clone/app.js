@@ -58,10 +58,27 @@ app.post('/posts', (req, res) => {
 
 app.put('/posts/:id/upvote', (req, res) => {
   let postID = req.params.id;
-  console.log(postID);
-  let voteValue = 1;
-  res.send('hello');
+
+  connection.query(`UPDATE posts SET score = score + 1 WHERE id = ${postID}`,(err, result) => {
+        if (err) {
+          throw err;
+        } else {
+          connection.query(`SELECT * FROM posts WHERE ID = ${postID}`, (err, result) => {
+            if(err){
+              throw err;
+            } else {
+              res.json({
+                posts: result,
+              });
+            }
+          })
+         
+        }
+    }
+  );
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`The server is up and running on port: ${PORT}`);

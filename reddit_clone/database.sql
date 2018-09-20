@@ -17,3 +17,7 @@ CREATE TABLE posts
   INSERT INTO posts(title, url) VALUES ('International news from Guardian', 'https://www.theguardian.com/international');
 
   INSERT INTO posts(title, url) VALUES ('Google news from The Verge', 'https://www.theverge.com/google');
+
+  UPDATE MyTable SET displayorders=displayorders+1 WHERE displayorders>2
+
+  UPDATE posts SET score = score + 1 WHERE id = 48;
