@@ -15,23 +15,16 @@ connection.connect(err => {
   console.log('Connected to database');
 });
 
-let query = 'SELECT * FROM posts';
-
-connection.query(query, (err, result) => {
-  if (err) throw err;
-
-  console.log('Data received from database');
-  console.log(result);
-});
-
-connection.end();
-
-app.get('/hello', (req, res) => {
-  res.send('Hello world');
-});
-
 app.get('/posts', (req, res) => {
-  res.send('Hello world');
+  connection.query('SELECT * FROM posts', (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      res.json({
+        "posts": result,
+      });
+    }
+  });
 });
 
 app.listen(PORT, () => {
