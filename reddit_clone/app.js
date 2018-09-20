@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 const PORT = 8080;
+
+app.use(bodyParser.json());
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -21,7 +24,24 @@ app.get('/posts', (req, res) => {
       throw err;
     } else {
       res.json({
-        "posts": result,
+        posts: result
+      });
+    }
+  });
+});
+
+app.post('/posts', (req, res) => {
+  let postTitle = req.body.title;
+  let postURL = req.body.url;
+
+  let query = `INSERT INTO posts(title, url) VALUES ('${postTitle}', '${postURL}')`;
+  connection.query(query, (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      res.json({
+        title: req.body.title,
+        url: req.body.url
       });
     }
   });
