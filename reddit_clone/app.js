@@ -33,18 +33,34 @@ app.get('/posts', (req, res) => {
 app.post('/posts', (req, res) => {
   let postTitle = req.body.title;
   let postURL = req.body.url;
-
+  //select * from posts where id = 21;
   let query = `INSERT INTO posts(title, url) VALUES ('${postTitle}', '${postURL}')`;
   connection.query(query, (err, result) => {
     if (err) {
       throw err;
     } else {
-      res.json({
-        title: req.body.title,
-        url: req.body.url
-      });
+      let insertID = result.insertId;
+      connection.query(
+        `SELECT * FROM posts WHERE ID = ${insertID}`,
+        (err, result) => {
+          if (err) {
+            throw err;
+          } else {
+            res.json({
+              posts: result
+            });
+          }
+        }
+      );
     }
   });
+});
+
+app.put('/posts/:id/upvote', (req, res) => {
+  let postID = req.params.id;
+  console.log(postID);
+  let voteValue = 1;
+  res.send('hello');
 });
 
 app.listen(PORT, () => {
