@@ -108,6 +108,22 @@ app.put('/posts/:id/downvote', (req, res) => {
   );
 });
 
+app.delete('/posts/:id', (req, res) => {
+  let deleteID = req.params.id;
+  connection.query(
+    `DELETE from posts WHERE id = ${deleteID}`,
+    (err, result) => {
+      if (err) {
+        throw err;
+      } else {
+        res.json({
+          message: 'Post deleted successfully'
+        });
+      }
+    }
+  );
+});
+
 app.listen(PORT, () => {
   console.log(`The server is up and running on port: ${PORT}`);
 });

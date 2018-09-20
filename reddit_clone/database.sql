@@ -21,3 +21,5 @@ CREATE TABLE posts
   UPDATE MyTable SET displayorders=displayorders+1 WHERE displayorders>2
 
   UPDATE posts SET score = score + 1 WHERE id = 48;
+
+  DELETE from posts WHERE id = 54;
