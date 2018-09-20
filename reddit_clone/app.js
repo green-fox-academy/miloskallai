@@ -111,7 +111,7 @@ app.put('/posts/:id/downvote', (req, res) => {
 app.delete('/posts/:id', (req, res) => {
   let deleteID = req.params.id;
   connection.query(
-    `DELETE from posts WHERE id = ${deleteID}`,
+    `DELETE FROM posts WHERE id = ${deleteID}`,
     (err, result) => {
       if (err) {
         throw err;
@@ -119,6 +119,34 @@ app.delete('/posts/:id', (req, res) => {
         res.json({
           message: 'Post deleted successfully'
         });
+      }
+    }
+  );
+});
+
+app.put('/posts/:id', (req, res) => {
+  let postID = req.params.id;
+  let newTitle = req.body.title;
+  let newUrl = req.body.url;
+
+  connection.query(
+    `UPDATE posts SET title = '${newTitle}', url = '${newUrl}' WHERE id = ${postID}`,
+    (err, result) => {
+      if (err) {
+        throw err;
+      } else {
+        connection.query(
+          `SELECT * FROM posts WHERE ID = ${postID}`,
+          (err, result) => {
+            if (err) {
+              throw err;
+            } else {
+              res.json({
+                posts: result
+              });
+            }
+          }
+        );
       }
     }
   );
