@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+}
+
+.box-1 {
+  background-color: #51d400;
+  width: 280px;
+  height: 280px;
+}
+
+.box-2 {
+  background-color: #ffd62a;
+  width: 280px;
+  height: 280px;
+  flex-grow: 2;
+}
+
+.box-3 {
+  background-color: #b02aff;
+  width: 280px;
+  height: 280px;
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+  .container{
+    flex-direction: column;
+  }
+  
+  .box-1, .box-2, .box-3 {
+    height: 180px;
+    width: 100%;
+  }
+}
