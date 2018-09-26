@@ -98,3 +98,10 @@ img {
   margin-top: -118px;
   background-color: rgba(248, 87, 166, 0.7);
 }
+
+.thumbnail-img{
+  height: 90px;
+  width: 160px;
+  margin: 5px;
+  border: 1px solid yellow;
+}

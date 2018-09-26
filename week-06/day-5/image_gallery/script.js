@@ -22,6 +22,7 @@ const pictures = [
 const moveLeft = document.querySelector('.arrow-left');
 const moveRight = document.querySelector('.arrow-right');
 const pigHead = document.querySelector('.icofont-pig');
+const thumbnails = document.querySelector('.thumbnails');
 let image = document.querySelector('img');
 let descreption = document.querySelector('.img-description');
 let header = document.querySelector('h1');
@@ -37,6 +38,13 @@ header.textContent = pictures[0].name;
 pigHead.onclick = () => {
   firstPigSound.play();
 };
+
+for(let i = 0; i < pictures.length; i++){
+  let thumbnailImg = document.createElement('img');
+  thumbnailImg.src = pictures[i].imgSrc;
+  thumbnailImg.classList.add('thumbnail-img');
+  thumbnails.appendChild(thumbnailImg);
+ }
 
 moveRight.onclick = () => {
   counter++;
@@ -71,3 +79,4 @@ window.addEventListener('keydown', function(event) {
     header.textContent = pictures[counter].name;
   }
 });
+
