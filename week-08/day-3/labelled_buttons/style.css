@@ -1,0 +1,45 @@
+.btn-container{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #313841;
+}
+
+.delete{
+  display: flex;
+}
+
+.text, .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.icon{
+  background-color: #1C242B;
+  width: 35px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.icon:hover{
+  border-radius: 5px 0 0 5px;
+  color:#F34541;
+}
+
+i{
+  padding: 5px;
+}
+
+.text{
+  visibility: hidden;
+  padding: 5px;
+  background-color: #F34541;
+  width: 120px;
+  border-radius: 0 5px 5px 0;
+}
+
+
