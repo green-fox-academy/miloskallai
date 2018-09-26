@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+ 
 }
 
 .icon{
@@ -23,11 +23,19 @@
   width: 35px;
   border-radius: 5px;
   transition: 0.3s;
+  color: white;
 }
 
 .icon:hover{
   border-radius: 5px 0 0 5px;
   color:#F34541;
+  visibility: visible;
+}
+
+.icon:hover + .text{
+  visibility: visible;
+  background-color: #F34541;
+  color: white;
 }
 
 i{
@@ -35,11 +43,13 @@ i{
 }
 
 .text{
-  visibility: hidden;
+  
   padding: 5px;
-  background-color: #F34541;
+  color: #313841;
+  background-color: #313841;
   width: 120px;
   border-radius: 0 5px 5px 0;
+  transition: 0.3s;
 }
 
 
