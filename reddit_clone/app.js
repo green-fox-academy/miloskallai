@@ -21,7 +21,7 @@ connection.connect(err => {
 });
 
 app.get('/posts', (req, res) => {
-  connection.query('SELECT * FROM posts', (err, result) => {
+  connection.query('SELECT * FROM posts ORDER BY score DESC', (err, result) => {
     if (err) {
       throw err;
     } else {
