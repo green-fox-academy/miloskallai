@@ -1,0 +1,48 @@
+body{
+  background-color: #EBEBEBEB;
+  font-family: 'Raleway', sans-serif;
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  background-color: white;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+input{
+  width: 25vw;
+  height: 35px;
+}
+
+label{
+  text-transform: uppercase;
+  margin: 10px 10px 10px 0px;
+}
+
+button{
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: 10vw;
+  font-weight: 600;
+}
+
+.title{
+  font-size: 25px;
+}
+
+.forgot{
+  text-align: right;
+}
+
