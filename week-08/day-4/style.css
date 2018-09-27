@@ -15,12 +15,16 @@ form{
   width: 25vw;
   background-color: white;
   border-radius: 5px;
-  padding: 40px;
+  padding: 10px 40px 50px 40px;
 }
 
 input{
   width: 25vw;
   height: 35px;
+}
+
+input:nth-child(1):focus{
+  border: 2px solid green;
 }
 
 label{

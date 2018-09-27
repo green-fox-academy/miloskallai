@@ -13,13 +13,17 @@
     <form action="POST">
       <p class="title">ACCOUNT LOGIN</p>
       <label for="username">username</label>
-      <input type="text" name="username">
+      <input class='focused' type="text" name="username">
       <label for="password">password</label>
       <input type="password" name="password">
       <p class="forgot">Forgot password?</p>
       <button>Login</button>
     </form>
   </div>
+  <script>
+  let firstInput = document.querySelector('.focused');
+  firstInput.focus();
+  </script>
 </body>
 
 </html>
