@@ -23,8 +23,8 @@ input{
   height: 35px;
 }
 
-input:nth-child(1):focus{
-  border: 2px solid green;
+.focused:focus{
+  border: 1px solid green;
 }
 
 label{
@@ -36,10 +36,11 @@ button{
   border: none;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 18px;
   border-radius: 20px;
   width: 10vw;
   font-weight: 600;
+  font-size: 15px;
 }
 
 .title{
