@@ -57,7 +57,8 @@ fetch(url)
       let postUrl = document.createElement('a');
       postUrl.classList.add('post-url');
       postUrl.innerHTML = posts[i].url;
-      postUrl.href = '#';
+      postUrl.href = posts[i].url;
+      postUrl.target = '_blank';
       postDiv.appendChild(postUrl);
 
       let postData = document.createElement('div');
