@@ -22,6 +22,12 @@ fetch(url)
 
       let arrowUpIcon = document.createElement('i');
       arrowUpIcon.classList.add('arrow', 'icofont-arrow-up');
+      arrowUpIcon.addEventListener('click', () => {
+        location.reload();
+        fetch(`${url}/${posts[i].id}/upvote`, {
+          method: 'PUT'
+        }).then(response => response.json());
+      })
       vote.appendChild(arrowUpIcon);
 
       let voteScore = document.createElement('p');
@@ -31,6 +37,12 @@ fetch(url)
 
       let arrowDownIcon = document.createElement('i');
       arrowDownIcon.classList.add('arrow', 'icofont-arrow-down');
+      arrowDownIcon.addEventListener('click', () => {
+        location.reload();
+        fetch(`${url}/${posts[i].id}/downvote`, {
+          method: 'PUT'
+        }).then(response => response.json());
+      })
       vote.appendChild(arrowDownIcon);
 
       let postDiv = document.createElement('div');
@@ -62,10 +74,11 @@ fetch(url)
       distinctLine.innerHTML = '|';
       postData.appendChild(distinctLine);
 
-      let btnEdit = document.createElement('button');
-      btnEdit.classList.add('btn-edit');
-      btnEdit.innerHTML = 'modify';
-      postData.appendChild(btnEdit);
+      let btnModify = document.createElement('a');
+      btnModify.classList.add('btn-edit');
+      btnModify.href = `http://localhost:8080/${posts[i].id}/modify`;
+      btnModify.innerHTML = 'modify';
+      postData.appendChild(btnModify);
 
       let btnDelete = document.createElement('button');
       btnDelete.classList.add('btn-delete');
@@ -74,7 +87,6 @@ fetch(url)
          fetch(`${url}/${posts[i].id}`, {
           method: 'delete'
         }).then(response => response.json());
-        //location.reload();
         
          let toDelete = document.getElementById(`${posts[i].id}`);
          console.log(posts[i].id);
