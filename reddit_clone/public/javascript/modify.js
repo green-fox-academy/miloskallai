@@ -17,6 +17,7 @@ fetch(url)
     if(posts[i].id === urlId){
       inputTitle.value = posts[i].title;
       inputURL.value = posts[i].url;
+      
     }
   }
 })
@@ -24,3 +25,10 @@ fetch(url)
 form.action = `http://localhost:8080/posts/${urlId}`;
 form.method="PUT"
 form.enctype="application/json"
+
+/*
+button.addEventListener('click', ()=>{
+  fetch(`http://localhost:8080/posts/${urlId}`, {
+    method: 'PUT'
+  }).then(response => response.json());
+})*/
