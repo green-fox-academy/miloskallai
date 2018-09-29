@@ -1,8 +1,10 @@
 let cityName = document.querySelector('.get-city-name');
 let btn = document.querySelector('button');
+let infoContainer = document.querySelector('.info-container');
 let city;
 let url;
 const apiKey = 'AIzaSyChO0AZ-noJA3nkiVHh4piPHviR2vymmhE';
+
 
 btn.addEventListener('click', () => {
   event.preventDefault();
@@ -17,6 +19,16 @@ btn.addEventListener('click', () => {
     let lat = data.results[0].geometry.location.lat;
     let lng = data.results[0].geometry.location.lng;
     console.log(`${lat}, ${lng}`);
+
+    let latSpan = document.createElement('span');
+    latSpan.classList.add = 'latitude';
+    latSpan.innerHTML = `lattitude: ${lat}, `;
+    infoContainer.appendChild(latSpan);
+
+    let lngSpan = document.createElement('span');
+    lngSpan.classList.add = 'longitude';
+    lngSpan.innerHTML = `longitude: ${lng}`;
+    infoContainer.appendChild(lngSpan);
   })
 })
 
