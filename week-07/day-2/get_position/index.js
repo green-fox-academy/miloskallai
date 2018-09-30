@@ -4,6 +4,8 @@ let infoContainer = document.querySelector('.info-container');
 let city;
 let url;
 const apiKey = 'AIzaSyChO0AZ-noJA3nkiVHh4piPHviR2vymmhE';
+let embedLocation; 
+const iFrame = document.querySelector('iframe');
 
 
 btn.addEventListener('click', () => {
@@ -29,7 +31,12 @@ btn.addEventListener('click', () => {
     lngSpan.classList.add = 'longitude';
     lngSpan.innerHTML = `longitude: ${lng}`;
     infoContainer.appendChild(lngSpan);
+    iFrame.src=`https://www.google.com/maps/embed/v1/place?q=${cityName.value}&key=AIzaSyChO0AZ-noJA3nkiVHh4piPHviR2vymmhE`;
+    iFrame.style.visibility = 'visible';
+
   })
+
+  ;
 })
 
 
