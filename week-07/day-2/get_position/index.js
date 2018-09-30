@@ -3,7 +3,7 @@ let btn = document.querySelector('button');
 let infoContainer = document.querySelector('.info-container');
 let city;
 let url;
-const apiKey = 'AIzaSyChO0AZ-noJA3nkiVHh4piPHviR2vymmhE';
+const apiKey = 'deleted';
 let embedLocation; 
 const iFrame = document.querySelector('iframe');
 
@@ -11,7 +11,6 @@ const iFrame = document.querySelector('iframe');
 btn.addEventListener('click', () => {
   event.preventDefault();
   url = `https://maps.googleapis.com/maps/api/geocode/json?address=${cityName.value}&key=${apiKey}`;
-  console.log(url);
   
   fetch(url)
   .then(response => {
@@ -31,7 +30,7 @@ btn.addEventListener('click', () => {
     lngSpan.classList.add = 'longitude';
     lngSpan.innerHTML = `longitude: ${lng}`;
     infoContainer.appendChild(lngSpan);
-    iFrame.src=`https://www.google.com/maps/embed/v1/place?q=${cityName.value}&key=AIzaSyChO0AZ-noJA3nkiVHh4piPHviR2vymmhE`;
+    iFrame.src=`https://www.google.com/maps/embed/v1/place?q=${cityName.value}&key=${apiKey}`;
     iFrame.style.visibility = 'visible';
 
   })
