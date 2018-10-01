@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
+
 app.post('/singup', (req, res)=>{
   console.log(req.body);
   res.json(req.body);

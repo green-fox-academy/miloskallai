@@ -6,13 +6,16 @@
 <body>
   <form action="http://localhost:3000/singup" method="POST" enctype="application/json">
     <label for="name">name</label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" id='name' required>
 
     <label for="email">email</label>
-    <input type="email" name="email" required>
+    <input type="email" name="email" id='email' required>
   <button type="submit">submit</button>
   </form>
 
+  <div class="result-container">
+
+  </div>
 <script src="index.js"></script>  
 </body>
 </html>
