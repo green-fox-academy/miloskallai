@@ -2,11 +2,18 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-let cors = require('cors');
+const cors = require('cors');
+const path = require('path');
 const PORT = 8080;
+const methodOverride = require('method-override');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
+app.use(methodOverride('_method'));
+
+app.use('/assets', express.static('assets'));
+app.use('/public',express.static('public'));
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -18,6 +25,18 @@ const connection = mysql.createConnection({
 connection.connect(err => {
   if (err) throw err;
   console.log('Connected to database');
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/index.html'));
+});
+
+app.get('/new', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/new_post.html'));
+});
+
+app.get('/:id/modify', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/modify_post.html'));
 });
 
 app.get('/posts', (req, res) => {
@@ -48,9 +67,7 @@ app.post('/posts', (req, res) => {
           if (err) {
             throw err;
           } else {
-            res.json({
-              posts: result
-            });
+            res.redirect('/');
           }
         }
       );
@@ -143,9 +160,7 @@ app.put('/posts/:id', (req, res) => {
             if (err) {
               throw err;
             } else {
-              res.json({
-                posts: result
-              });
+              res.redirect('/');
             }
           }
         );

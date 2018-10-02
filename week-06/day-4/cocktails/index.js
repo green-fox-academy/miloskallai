@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 const cocktails = [
@@ -17,12 +18,12 @@ const cocktails = [
 ];
 
 app.get('/', (req, res) => {
-  
   res.render('home',{
     alcoholList: alcoholList,
     cocktails: cocktails
   });
 });
+
 
 app.listen(PORT, ()=>{
   console.log(`Listening on port ${PORT}`);

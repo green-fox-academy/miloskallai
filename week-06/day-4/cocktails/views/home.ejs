@@ -4,19 +4,18 @@
 <head>
   <meta charset="utf-8" />
   <title>Cocktails</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <script src="main.js"></script>
 </head>
 
 <body>
   <h1>Cocktails</h1>
-<ul>
-  <li>ALL</li>
+<div class="cocktail-list">
+  <a>ALL</a>
   <% alcoholList.forEach(alcohol => { %>
-    <li><%= alcohol.toUpperCase() %></li>
+    <a><%= alcohol.toUpperCase() %></a>
  <% }) %>
-</ul>
+</div>
 
   <table>
     <tr>

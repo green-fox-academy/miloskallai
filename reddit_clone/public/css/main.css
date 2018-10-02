@@ -81,6 +81,9 @@ header {
   padding-right: 2px;
   margin-left: 2px;
   transition: 0.2s;
+  text-decoration: none;
+  background-color:rgb(206, 178, 255, 0.4);
+  color: black;
 }
 
 .btn-delete:hover {
@@ -132,8 +135,8 @@ header {
 }
 
 ul {
-  padding: 5px;
-  list-style: none;
+  padding: 5px 5px 5px 0px;
+  list-style: square inside;
   margin-left: 15px;
 }
 
