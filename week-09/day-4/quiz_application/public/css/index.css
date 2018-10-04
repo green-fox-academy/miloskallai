@@ -46,3 +46,17 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+.manage-questions{
+  text-decoration: none;
+  margin: 10px;
+  align-self: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: blueviolet;
+  transition: 0.3s;
+}
+
+.manage-questions:hover{
+  color: white;
+}
