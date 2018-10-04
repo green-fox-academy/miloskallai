@@ -58,6 +58,16 @@ app.get('/game', (req, res) => {
   });
 });
 
+app.get('/questions', (req, res) => {
+  connection.query('SELECT * FROM questions', (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+     res.json(result);
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is up and running on port: ${PORT}`);
 });
