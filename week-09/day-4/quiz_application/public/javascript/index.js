@@ -1,3 +1,12 @@
-url = 'http://localhost:8080/game';
+const url = 'http://localhost:8080/game';
 
-fetch
+
+window.onload = () => {
+  fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then(myJson => {
+      console.log(myJson);
+    });
+};
