@@ -31,6 +31,10 @@ connection.connect(err => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/index.html'));
+})
+
 app.get('/game', (req, res) => {
   connection.query('SELECT * FROM questions', (err, result) => {
     if (err) {
@@ -41,12 +45,12 @@ app.get('/game', (req, res) => {
       let questionId = result[randomQuestionNumber].id;
 
       connection.query(
-        `SELECT * FROM answers WHERE id=${questionId}`,
+        `SELECT * FROM answers WHERE question_id=${questionId}`,
         (err, result) => {
           if (err) {
             throw err;
           } else {
-            let answer = result[0];
+            let answer = result;
             res.json({
               question: question,
               answer: answer
@@ -67,6 +71,10 @@ app.get('/questions', (req, res) => {
     }
   });
 });
+
+/* app.post('/questions', (req, res) => {
+  let newQuestion = req.body.question;
+}) */
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port: ${PORT}`);
