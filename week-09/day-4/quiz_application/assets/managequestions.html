@@ -19,39 +19,38 @@
     </div>
 
     <div class="new-question-container">
+
       <h3>New Question</h3>
-      <form action="">
+
+      <form action="http://localhost:8080/questions" method="POST" enctype="application/json">
+
         <input class="new-question-input" type="text" name="question" id="question" placeholder="Type your question here"
           size=90>
 
         <h2>Answers</h2>
         <div class="new-answer-container">
-          <span>#1</span> <input class="new-answer-input" type="text" name="answer1" id="answer1" placeholder="Type your answer here">
-          <input type="radio" id='is_correct' name="is_correct">
+          <span>#1</span> <input class="new-answer-input-1" type="text" name="answer1" id="answer1" placeholder="Type your answer here">
+          <input type="radio" id='radio-1' class="btn-radio" id='is_correct1' name="is_correct1" value=0>
         </div>
         <div class="new-answer-container">
-          <span>#2</span> <input class="new-answer-input" type="text" name="answer2" id="answer2" placeholder="Type your answer here">
-          <input type="radio" id='is_correct' name="is_correct">
+          <span>#2</span> <input class="new-answer-input-2" type="text" name="answer2" id="answer2" placeholder="Type your answer here">
+          <input type="radio" id='radio-2' class="btn-radio" id='is_correct2' name="is_correct2" value=0>
         </div>
         <div class="new-answer-container">
-          <span>#3</span> <input class="new-answer-input" type="text" name="answer3" id="answer3" placeholder="Type your answer here">
-          <input type="radio" id='is_correct' name="is_correct">
+          <span>#3</span> <input class="new-answer-input-3" type="text" name="answer3" id="answer3" placeholder="Type your answer here">
+          <input type="radio" id='radio-3' class="btn-radio" id='is_correct3' name="is_correct3" value=0>
         </div>
         <div class="new-answer-container">
-          <span>#4</span> <input class="new-answer-input" type="text" name="answer4" id="answer4" placeholder="Type your answer here">
-          <input type="radio" id='is_correct' name="is_correct">
+          <span>#4</span> <input class="new-answer-input-4" type="text" name="answer4" id="answer4" placeholder="Type your answer here">
+          <input type="radio" id='radio-4' class="btn-radio" id='is_correct4' name="is_correct4" value=0>
         </div>
 
         <button class="btn-submit">Submit</button>
+
       </form>
     </div>
 
   </div>
-
-
-
-
-
 
   <script src="../public/javascript/manage.js"></script>
 </body>

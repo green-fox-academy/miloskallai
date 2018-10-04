@@ -76,22 +76,45 @@ app.get('/questions', (req, res) => {
   });
 });
 
-/* app.post('/questions', (req, res) => {
+app.post('/questions', (req, res) => {
   let newQuestion = req.body.question;
   let realQuestionId;
 
-  let questionId = req.body.question_id;
   let answer1 = req.body.answer1;
   let answer2 = req.body.answer2;
   let answer3 = req.body.answer3;
   let answer4 = req.body.answer4;
 
-  let isCorrect1 = req.body.is_correct1; 
-  let isCorrect2 = req.body.is_correct2; 
-  let isCorrect3 = req.body.is_correct3; 
-  let isCorrect4 = req.body.is_correct4; 
+  let isCorrect1 = req.body.is_correct1;
+  let isCorrect2 = req.body.is_correct2;
+  let isCorrect3 = req.body.is_correct3;
+  let isCorrect4 = req.body.is_correct4;
 
-}) */
+  if(isCorrect1 === undefined){
+    isCorrect1 = 0
+  } else {
+    isCorrect1 = 1;
+  }
+
+  if(isCorrect2 === undefined){
+    isCorrect2 = 0
+  } else {
+    isCorrect2 = 1;
+  }
+
+  if(isCorrect3 === undefined){
+    isCorrect3 = 0
+  } else {
+    isCorrect3 = 1;
+  }
+
+  if(isCorrect4 === undefined){
+    isCorrect4 = 0
+  } else {
+    isCorrect4 = 1;
+  }
+
+});
 
 app.delete('/questions/:id', (req, res) => {
   let id = req.params.id;
@@ -100,9 +123,9 @@ app.delete('/questions/:id', (req, res) => {
     if (err) {
       throw err;
     } else {
-      res.json({ 
+      res.json({
         message: `question with ${id} deleted succesfully`
-       });
+      });
     }
   });
 });
