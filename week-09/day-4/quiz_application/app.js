@@ -32,12 +32,28 @@ connection.connect(err => {
 });
 
 app.get('/game', (req, res) => {
-  connection.query('SELECT * FROM questions', (err, resulst) => {
+  connection.query('SELECT * FROM questions', (err, result) => {
     if (err) {
       throw err;
     } else {
-      let randomQuestionNumber = Math.floor(Math.random() * resulst.length);
-      res.json(resulst[randomQuestionNumber]);
+      let randomQuestionNumber = Math.floor(Math.random() * result.length);
+      let question = result[randomQuestionNumber];
+      let questionId = result[randomQuestionNumber].id;
+
+      connection.query(
+        `SELECT * FROM answers WHERE id=${questionId}`,
+        (err, result) => {
+          if (err) {
+            throw err;
+          } else {
+            let answer = result[0];
+            res.json({
+              question: question,
+              answer: answer
+            });
+          }
+        }
+      );
     }
   });
 });
