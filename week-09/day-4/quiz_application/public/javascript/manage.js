@@ -43,14 +43,6 @@ let body = {
   isCorrect4: radioBtn4.value
 }
 
-btnSubmit.addEventListener('submit', () => {
- console.log(body)
-  })
-
-
-
-
-
 window.onload = () => {
 
   renderQuestions();
