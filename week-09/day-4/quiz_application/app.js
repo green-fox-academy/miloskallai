@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const express = require('express');
 const app = express();
@@ -10,7 +10,7 @@ const mysql = require('mysql');
 const PORT = 8080;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use('/assets', express.static('assets'));
@@ -21,22 +21,27 @@ const connection = mysql.createConnection({
   user: 'root',
   password: 'hello',
   database: 'quiz_app'
-}); 
+});
 
 connection.connect(err => {
-  if(err){
+  if (err) {
     throw err;
   } else {
     console.log('Connected to database');
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('works');
+app.get('/game', (req, res) => {
+  connection.query('SELECT * FROM questions', (err, resulst) => {
+    if (err) {
+      throw err;
+    } else {
+      let randomQuestionNumber = Math.floor(Math.random() * resulst.length);
+      res.json(resulst[randomQuestionNumber]);
+    }
+  });
 });
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port: ${PORT}`);
-})
-
-
+});
