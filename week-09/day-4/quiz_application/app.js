@@ -16,11 +16,11 @@ app.use(cors());
 app.use('/assets', express.static('assets'));
 app.use('/public', express.static('public'));
 
-/*  const connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'hello',
-  database: ''
+  database: 'quiz_app'
 }); 
 
 connection.connect(err => {
@@ -29,7 +29,7 @@ connection.connect(err => {
   } else {
     console.log('Connected to database');
   }
-}); */
+});
 
 app.get('/', (req, res) => {
   res.send('works');
