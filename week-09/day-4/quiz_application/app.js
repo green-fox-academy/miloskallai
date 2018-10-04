@@ -121,7 +121,6 @@ app.post('/questions', (req, res) => {
       throw err;
     } else {
       let questionID = result.insertId;
-      console.log(result);
 
       let answerValues1 = {
         question_id: questionID,
